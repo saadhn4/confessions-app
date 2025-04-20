@@ -2,7 +2,9 @@ import express from "express";
 import config from "config";
 import "./utils/dbConnect.js";
 import confessionsRouter from "./controllers/confessions/index.js";
+import usersRouter from "./controllers/users/index.js";
 import publicRouter from "./controllers/public/index.js";
+import authMiddleware from "./middleware/auth.js";
 
 const app = express();
 const PORT = config.get("PORT");
@@ -14,6 +16,8 @@ app.get("/saad", (req, res) => {
 });
 
 app.use("/api/public", publicRouter);
+app.use(authMiddleware);
+app.use("/api/users", usersRouter);
 app.use("/api/confessions", confessionsRouter);
 
 app.listen(PORT, () => {
