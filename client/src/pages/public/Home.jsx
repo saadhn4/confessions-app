@@ -6,7 +6,7 @@ const Home = () => {
 
   return (
     <div className="h-[90vh] flex flex-col justify-center items-center">
-      <h1 className="text-3xl mb-6">Welcome to Confessions App!</h1>
+      <h1 className="text-3xl mb-6 font-semibold">Welcome to Whisp!</h1>
       <div className="flex gap-4">
         {!token ? (
           <>

@@ -25,18 +25,16 @@ const Login = () => {
       let token = response.data.token;
       localStorage.setItem("token", token);
       alert("Login successful");
-      setTimeout(() => {
-        navigate("/confessions");
-      }, 2000);
+      navigate("/confessions");
     } catch (error) {
       console.log(error.response.data.message);
     }
   }
   return (
-    <div className="h-screen flex justify-center items-center bg-gray-100 px-8">
+    <div className="h-[90vh] flex justify-center items-center bg-gray-100 px-8">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-y-4 justify-center items-center md:w-1/4 w-full shadow-lg rounded-lg p-5"
+        className="flex flex-col gap-y-4 justify-center items-center md:w-1/4 w-full shadow-lg rounded-lg p-5 bg-white"
       >
         <h2 className="text-2xl font-bold text-blue-500 mb-3">Login</h2>
         <input
