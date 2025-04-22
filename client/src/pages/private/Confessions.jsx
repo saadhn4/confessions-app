@@ -23,20 +23,10 @@ const Confessions = () => {
     };
     getData();
   }, []);
-
-  const handleLogOut = () => {
-    localStorage.clear();
-    navigate("/login");
-  };
+  
   return (
     <>
       <div className="flex justify-end p-5">
-        <button
-          className="bg-blue-400 text-white font-bold rounded-lg p-2 cursor-pointer"
-          onClick={handleLogOut}
-        >
-          Log out
-        </button>
       </div>
       <h1 className="text-center my-3 font-semibold text-2xl">
         All confessions
