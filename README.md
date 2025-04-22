@@ -9,7 +9,6 @@ A full-stack web application built with **React**, **Node.js**, **Express**, and
 - ✅ User Registration with Email Verification (via Gmail SMTP)
 - 🔐 JWT-based User Login & Protected Routes
 - ✍️ Create and View Anonymous Confessions
-- 🧾 CRUD Operations for Confessions (Admin/Expansion Ready)
 - 📦 Persistent User Sessions via Local Storage
 - 🧑‍💻 React Frontend + Express API Backend
 
