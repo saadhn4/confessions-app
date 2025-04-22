@@ -8,6 +8,8 @@ const Navbar = () => {
     localStorage.clear();
     navigate("/login");
   };
+
+  const token = localStorage.getItem("token");
   return (
     // Desktop navbar
     <>
@@ -26,14 +28,25 @@ const Navbar = () => {
           <li>
             <Link to="/create">Create</Link>
           </li>
-          <li>
-            <a
-              className="bg-blue-400 text-white font-bold rounded-lg p-2 cursor-pointer"
-              onClick={handleLogOut}
-            >
-              Log out
-            </a>
-          </li>
+          {token ? (
+            <li>
+              <a
+                className="bg-blue-400 text-white font-bold rounded-lg p-2 cursor-pointer"
+                onClick={handleLogOut}
+              >
+                Log out
+              </a>
+            </li>
+          ) : (
+            <li>
+              <a
+                className="bg-blue-400 text-white font-bold rounded-lg p-2 cursor-pointer"
+                onClick={handleLogOut}
+              >
+                Sign up
+              </a>
+            </li>
+          )}
         </ul>
       </nav>
 

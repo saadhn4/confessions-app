@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -24,10 +24,10 @@ const Login = () => {
       console.log(response.data);
       let token = response.data.token;
       localStorage.setItem("token", token);
-      alert("Login successful");
       navigate("/confessions");
+      toast.success("Logged in succesfully!");
     } catch (error) {
-      console.log(error.response.data.message);
+      toast.error(error.response.data.message);
     }
   }
   return (

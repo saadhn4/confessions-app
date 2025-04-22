@@ -7,12 +7,15 @@ import Login from "./pages/public/Login";
 import Confessions from "./pages/private/Confessions";
 import Create from "./pages/private/Create";
 import PrivateOutlet from "./PrivateOutlet";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
     <>
       <Router>
         <Navbar />
+        <ToastContainer />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />

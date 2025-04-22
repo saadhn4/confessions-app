@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Create = () => {
   const [text, setText] = useState("");
@@ -18,7 +19,7 @@ const Create = () => {
           Authorization: `Bearer ${token}`,
         },
       });
-      alert("Note posted");
+      toast.success("Confession posted");
       navigate("/confessions");
     } catch (error) {
       console.log(error);
