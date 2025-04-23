@@ -38,14 +38,11 @@ const Navbar = () => {
               </a>
             </li>
           ) : (
-            <li>
-              <a
-                className="bg-blue-400 text-white font-bold rounded-lg p-2 cursor-pointer"
-                onClick={handleLogOut}
-              >
+            <Link to="/register">
+              <a className="bg-blue-400 text-white font-bold rounded-lg p-2 cursor-pointer">
                 Sign up
               </a>
-            </li>
+            </Link>
           )}
         </ul>
       </nav>
@@ -75,14 +72,33 @@ const Navbar = () => {
                   Create
                 </Link>
               </li>
-              <li>
-                <button
+              <li></li>
+              {token ? (
+                <li>
+                  <a
+                    className="bg-blue-400 text-white font-bold rounded-lg p-2 cursor-pointer"
+                    onClick={() => {
+                      handleLogOut();
+                      setMenuOpen(false);
+                    }}
+                  >
+                    Log out
+                  </a>
+                </li>
+              ) : (
+                <Link to="/register">
+                  <a className="bg-blue-400 text-white font-bold rounded-lg p-2 cursor-pointer">
+                    Sign up
+                  </a>
+                </Link>
+              )}
+              {/* <button
                   className="bg-blue-400 text-white font-bold rounded-lg p-2 cursor-pointer"
                   onClick={handleLogOut}
                 >
                   Log out
                 </button>
-              </li>
+              </li> */}
             </ul>
           )}
         </div>

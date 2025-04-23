@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Login = () => {
@@ -57,6 +57,12 @@ const Login = () => {
         >
           Login
         </button>
+        <p>
+          Not registered?
+          <Link className="ml-1 text-blue-400" to="/register">
+            Sign up
+          </Link>
+        </p>
       </form>
     </div>
   );
